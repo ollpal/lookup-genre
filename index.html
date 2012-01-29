@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Echonest Genre Lookup</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+    <script type="text/javascript" src="apikey.js"></script>
+    <script type="text/javascript" src="code.js"></script>
+    <link type="text/css" href="style.css" rel="stylesheet" />
+  </head>
+  
+  <body>
+    <form>
+      <fieldset>
+	<legend>Get Genre</legend> 
+	<label for="artist">Artist: </label>
+	<input id="artist" type="text" onkeydown="if (event.keyCode == 13) { lookupGenre(this.value); }">
+	<input id="get-genres" class="submit" type="button" disabled onclick="lookupGenre($('#artist').val())" value="Get Genres">
+      </fieldset>
+    </form>
+
+    <div id="genre">
+      <select id="select-artist" onclick="lookupGenreById(this.value)"></select>
+      <table id="genres"></table>
+    </div>
+
+  </body>
+</html>
